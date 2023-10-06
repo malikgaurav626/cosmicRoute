@@ -1,0 +1,223 @@
+
+@font-face {
+    font-family: 'Meltmino';
+    src: url('../fonts/Meltmino-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Meltmino';
+    src: url('../fonts/Meltmino-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Meltmino';
+    src: url('../fonts/Meltmino-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Meltmino';
+    src: url('../fonts/Meltmino-ExtraBlack.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Meltmino';
+    src: url('../fonts/Meltmino-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Meltmino';
+    src: url('../fonts/Meltmino-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Meltmino';
+    src: url('../fonts/Meltmino-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Meltmino';
+    src: url('../fonts/Meltmino-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Meltmino';
+    src: url('../fonts/Meltmino-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Meltmino';
+    src: url('../fonts/Meltmino-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Meltmino';
+    src: url('../fonts/Meltmino-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Meltmino';
+    src: url('../fonts/Meltmino-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Meltmino';
+    src: url('../fonts/Meltmino-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Meltmino';
+    src: url('../fonts/Meltmino-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style:normal;
+}
+canvas{
+    opacity: 1;
+}
+.welcome-container{
+    width: 100svw;
+    height: 100svh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Meltmino';
+    padding: 5px;
+    opacity: 0;
+    animation: animata-fadeIn 0.3s linear 0s 1 forwards;
+}
+.welcome-name{
+    font-weight: 800;
+    font-size: 100px;
+}
+.enterBtn{
+    color: #c3c2c4;
+    transform: translateY(60px);
+    background-color: transparent;
+    outline:1px solid #c3c2c4;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.2s;
+    border: none;
+    font-weight: bold;
+}
+.enterBtn:before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 120%;
+    background: linear-gradient(to left, 
+    #ef2f2d 0%,  #ef2f2d 14.28%,
+    #fd6444 14.28%,  #fd6444 28.56%,
+    #fca577 28.56%, #fca577  42.84%,
+    #f6dbb8 42.84%,  #f6dbb8 57.12%,
+    #7fa7a1 57.12%,  #7fa7a1 71.4%,
+    #058992 71.4%,  #058992 85.68%,
+    #00728d 85.68%, #00728d  100%
+);
+    transition: 0.5s;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.enterBtn:hover:before{
+    width: 120%;
+    height: 120%;
+}
+.enterBtn:hover{
+    color: black;
+    border: none;
+}
+.strip-container{
+    position: absolute;
+    width: 200px;
+}
+.top-right-strip{
+    top: 0;
+    right: 0;
+}
+.bottom-left-strip{
+    bottom: 0;
+    left: 0;
+}
+.strip{
+    width: 100%;
+    height: 40px;
+    background-color: #c3c2c4;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Meltmino';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.strip{
+    transition: 0.2s;
+    cursor: pointer;
+}
+.strip:hover{
+    background-color: rgba(0, 0, 0, 0);
+    transition: 0.2s;
+    text-decoration: underline;
+}
+
+
+
+@media (max-width: 576px) {
+    .welcome-name{
+        text-align: center;
+        line-height: 90px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .enterBtn{
+        transform: translateY(50px);
+    }
+    .strip-container{
+        display: none;
+    }
+}
+
+
+
+
+
+
+@keyframes animata-fadeAway {
+    100%{
+        opacity: 0;
+    }
+}

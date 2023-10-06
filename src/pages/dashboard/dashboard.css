@@ -1,0 +1,547 @@
+@font-face {
+    font-family: "TG Axima Regular";
+    src: url("../fonts/TG Axima Regular.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "TG Axima Medium";
+    src: url("../fonts/TG Axima Medium.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "TG Axima Light";
+    src: url("../fonts/TG Axima Light.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "TG Axima Heavy";
+    src: url("../fonts/TG Axima Heavy.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "TG Axima Extended Regular";
+    src: url("../fonts/TG Axima Extended Regular.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "TG Axima Extended Medium";
+    src: url("../fonts/TG Axima Extended Medium.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "TG Axima Extended Light";
+    src: url("../fonts/TG Axima Extended Light.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "TG Axima Extended Heavy";
+    src: url("../fonts/TG Axima Extended Heavy.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "TG Axima Extended Bold";
+    src: url("../fonts/TG Axima Extended Bold.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "TG Axima Extended Black";
+    src: url("../fonts/TG Axima Extended Black.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "TG Axima Bold";
+    src: url("../fonts/TG Axima Bold.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "TG Axima Black";
+    src: url("../fonts/TG Axima Black.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: 'Meltmino';
+    src: url('../fonts/Meltmino-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+  body{
+    background-color: black;
+    color: #c3c2c4;
+    font-family: 'TG Axima Regular';
+    overflow: hidden;
+  }
+  .dashboard-container{
+    opacity: 0;
+    animation: animata-fadeIn 0.3s linear 0s 1 forwards;
+  }
+  .text-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    pointer-events: none;
+  
+  }
+  .planet-heading{
+   font-family: 'TG Axima Heavy'; 
+   font-size: 60px;
+   transform: translateY(0px);
+   transition: 0.3s;
+   min-height: 200px;
+   max-height: 200px;
+  }
+  .planet-description{
+    font-family: 'TG Axima Regular';
+    transform: translateY(0px);
+    transition: 0.3s;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 17px;
+  }
+  .arrow{
+    position: absolute;
+    display: flex;
+    width: fit-content;
+    font-family: 'TG Axima Heavy';
+    font-size: 40px;
+    cursor: pointer;
+    transition: 0.2s;
+    user-select: none;
+    pointer-events: all;
+  }
+  .arrow:hover{
+    scale: 1.1;
+    transition: 0.2s;
+  }
+  .up-arrow{
+    transform: rotateZ(0deg);
+    left: 0;
+    top: 20%;
+  }
+  .up-arrow::before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: '^';
+    transform: translate(-50%, -50%);
+    transition: 0.2s;
+  }
+  .arrow:hover.up-arrow::before{
+    top: 20%;
+    transition: 0.2s;
+  }
+  .down-arrow{
+    transform: rotateZ(180deg);
+    left: 0;
+    bottom: 20%;
+    transition: 0.2s;
+  }
+  .down-arrow::before{
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    content: '^';
+    transform: translate(-50%, 50%);
+    transition: 0.2s;
+  }
+  .arrow:hover.down-arrow::before{
+    bottom: 80%;
+    transition: 0.2s;
+  }
+  .planet-heading-container{
+    padding-left: 0;
+    list-style-type: none;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 195px;
+    transition: 0.3s;
+    padding: 0;
+  }
+  .planet-description-container{
+    padding-left: 0;
+    list-style-type: none;
+    overflow: hidden;
+    height: 121px;
+    transition: 0.3s;
+    padding: 0;
+  }
+  .planet-name-container{
+    list-style-type: none;
+    overflow: hidden;
+    height: 24px;
+    transition: 0.3s;
+    padding: 0;
+    transform: translateY(0px);
+    padding-left: 5px;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: fit-content;
+    margin: 0;
+  }
+  li{
+    padding: 0;
+  }
+  .real-name{
+    position: absolute;
+    width: fit-content;
+    padding: 0;
+    height: fit-content;
+  }
+  .real-name-item{
+    font-family: 'Meltmino';
+    font-weight: 900;
+    transition: 0.3s;
+  }
+  .gravity-container{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    font-family: 'TG Axima Heavy';
+    padding: 0;
+    
+  }
+  .g{
+    font-size: 50px;
+  }
+  .g-value{
+    font-size: 20px;
+    font-family: 'Meltmino';
+    font-weight: 400;
+    transition: 0.3s;
+  }
+  .slash{
+    font-family: 'Meltmino';
+    font-weight: 200;
+    font-size: 40px;
+  }
+  .g-value-container{
+    padding: 0;
+    list-style-type: none;
+    height: 76px;
+    width: fit-content;
+    font-family: 'Meltmino';
+    overflow: hidden;
+  }
+  .avg-temp-container{
+    position: absolute;
+    list-style-type: none;
+    top: 0;
+    right: 0;
+    font-family: 'Meltmino';
+    font-weight: 900;
+    overflow: hidden;
+    height: 24px;
+    width: fit-content;
+    padding: 0;
+  }
+  .temp-item{
+    transition: 0.3s;
+  }
+  .moon-container{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+  }
+  .moon-label{
+    writing-mode: vertical-rl;
+    font-family: 'TG Axima Heavy';
+    font-size: 30px;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    opacity: 0.4;
+    text-decoration: underline;
+    height: 100%;
+    transition: 0.3s;
+  }
+  .moon-list{
+    padding: 0;
+    list-style-type: none;
+    margin-right: 55px;
+    height: 108px;
+    overflow: hidden;
+    text-align: end;
+  }
+  .planet-moon-list{
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    margin-bottom: 0;
+    height: 108px;
+    overflow: hidden;
+  }
+  .moon-list-item{
+    transition: 0.3s;
+  }
+  .moon{
+    font-family: 'Meltmino';
+    font-weight: 900;
+  }
+  .density-container{
+    position: absolute;
+    bottom: 20px;
+    width: fit-content;
+  
+  }
+  .density-value-container
+  {
+    padding: 0;
+    margin: 0;
+    height: 60px;
+    overflow: hidden;
+    font-size: 20px;
+  }
+  .density-value{
+    transition: 0.3s;
+  }
+  .density-title{
+    font-family: 'Meltmino';
+    font-weight: 200;
+    font-size: 40px;
+    transition: 0.3s;
+  }
+  .escapeVelocity-container{
+    width: fit-content;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+  }
+  .escapeVelocity-value-container{
+    padding: 0;
+    margin: 0;
+    height: 24px;
+    overflow: hidden;
+  }
+  .escapeVelocity-value{
+    transition: 0.3s;
+    font-family: 'Meltmino';
+    font-weight: 900;
+  }
+  .Earth{
+    background: linear-gradient(to left, #76b852, #8DC26F);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  .Jupiter{
+    background: linear-gradient(to right, #D1913C, #FFD194);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  .Mars{
+    background: linear-gradient(to right, #f46b45, #eea849);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  .Mercury{
+    background: linear-gradient(to right, #304352, #d7d2cc);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  .Neptune{
+    background: linear-gradient(to left, #005c97, #363795);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  .Pluto{
+    background: linear-gradient(to left, #8c1105, #eef2f3);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  .Saturn{
+    background: linear-gradient(to left, #f9a87b, #f97d5b);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  .Uranus{
+    background: linear-gradient(to left, #1c92d2, #f2fcfe);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  .Venus{
+    background: linear-gradient(to left, #ffe700, #c3c2c4);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  .bodyType-container{
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    padding: 0;
+    margin: 0;
+    transform: translateY(-50%);
+    writing-mode: vertical-lr;
+    width: 25px;
+    
+    overflow: hidden;
+  }
+  .bodyType{
+  font-family: "Meltmino";
+  transition: 0.3s;
+  }
+  
+  .expandBtnContainer{
+    color: #c3c2c4;
+    pointer-events: all;
+    text-align: center;
+  }
+  #interfaceBtnId::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+   border: 1px solid white;
+   border-radius: 1px;
+    z-index: -1;
+    transition: 0.2s;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #interfaceBtnId{
+    transition: 0.3s;
+    font-family: 'TG Axima Black';
+    color: black;
+    position: relative;
+    z-index: 1;
+    border-radius: 1px;
+    transition: 0.2s;
+    user-select: none;
+  }
+  #interfaceBtnId:hover{
+    border: 1px solid #00000000;
+  }
+  
+  #interfaceBtnId:hover::before{
+    width: 120%;
+    height: 170%;
+    opacity: 1;
+
+  }
+  .planatarium-container{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    pointer-events: none;
+    height: 400px;
+    transition: 0.3s;
+    opacity: 0;
+  }
+  .planatarium-list{
+    height: 500px;
+    overflow: scroll;
+    overflow-x: hidden;
+    pointer-events:all;
+    border: 1px solid #c3c2c4;
+    
+  }
+  .planatarium-key{
+    border: 1px solid #76b852;
+    padding: 5px !important;
+    font-family: 'Meltmino';
+    
+  }
+  .planatarium-value{
+    border: 1px solid #76b852;
+    padding: 5px !important;
+    font-family: 'Meltmino';
+  }
+  ::-webkit-scrollbar{
+    width: 0px;
+  }
+  ::-webkit-scrollbar-track{
+    background-color: rgba(0, 0, 0, 0);
+  }
+  ::-webkit-scrollbar-thumb{
+    background-color: #c3c2c4;
+  }
+  .rel-link{
+    text-decoration: underline;
+    color: white;
+    transition: 0.2s;
+  }
+  
+  
+  @media (max-width: 998px) {
+    .planet-description{
+      font-size: 15px;
+    }
+    .gravity-container{
+      left: -20px;
+      transform: translateX(0);
+      bottom: -10px;
+      scale: 0.7;
+    }
+    .text-container{
+      width: 100%;
+    }
+    .planet-description{
+      padding-top: 0px;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    .moon-container{
+      scale: 0.7;
+      bottom: -15px;
+      right: -18px;
+    }
+    .density-container{
+      scale: 0.7;
+      left: 50%;
+      bottom: 11px;
+      padding-left: 0;
+      padding-right: 0;
+      transform: translateX(-70%);
+    }
+    .moon{
+      margin: 0;
+      padding: 0;
+    }
+    .moon-label{
+      padding: 0;
+      margin: 0;
+    }
+    .expandBtnContainer{
+      display: none;
+    }
+    .planatarium-container{
+      display: none;
+    }
+  }
+@media (max-width: 576px) {
+  .planet-heading-container{
+    height: 230px;
+  }
+  .planet-heading{
+    min-height: 230px;
+    max-height: 230px;
+
+  }
+  
+  
+}
+
+
+  @keyframes animata-fadeIn {
+    100%{
+      opacity: 1;
+    }
+    
+  }
