@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
   build: {
     chunkSizeWarningLimit: 1000,
-  },
-  optimizeDeps: {
-    include: ["three"],
+    rollupOptions: {
+      external: ["three"],
+    },
   },
 });
