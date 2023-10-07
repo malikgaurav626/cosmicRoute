@@ -5,12 +5,11 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
-    include: ["three"],
+    include: ["three/examples/jsm/controls/orbitcontrols"],
   },
   build: {
-    chunkSizeWarningLimit: 1000,
     rollupOptions: {
-      external: ["three"],
+      external: "^three/examples/jsm/controls/[^/]+$",
     },
   },
 });
